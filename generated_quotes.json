@@ -1,0 +1,702 @@
+[
+  {
+    "archetype": "FRAMEWORK",
+    "text": "And then RLHF became very dominant. And analogy there would be like sometimes you learn by writing 55 different essays and someone telling you which one they liked the most.",
+    "guest": "CEO, Surge AI",
+    "episode": "The 100-person AI lab that became Anthropic and Google's secret weapon",
+    "id": 1
+  },
+  {
+    "archetype": "HOT_TAKE",
+    "text": "Yeah, I don't have kids, so I can give all these amazing answers. Actually, so my husband and I have been watching The Wire recently. We never actually saw it growing up, so we started watching it and it's great.",
+    "guest": "Leader, Tech",
+    "episode": "Why AI evals are the hottest new skill for product builders",
+    "id": 2
+  },
+  {
+    "archetype": "ANTI_TACTIC",
+    "text": "I love my Delphi clone, I teach a course called Scaling Entrepreneurial Ventures, and I don't do office hours, I have Delphi do my office hours. Very happy with that.",
+    "guest": "Co-founder, HubSpot",
+    "episode": "Sequoia CEO coach: Why it\u2019s never been easier to start a company, and never been harder to scale one",
+    "id": 3
+  },
+  {
+    "archetype": "ANTI_TACTIC",
+    "text": "And I kind of described it, I don't really think we live in that world, whether they could call that utopian or dystopian, I don't think we're lucky or unlucky enough to live in that world. We could debate that, we could talk about that more.",
+    "guest": "Co-founder, a16z",
+    "episode": "Marc Andreessen: The real AI boom hasn\u2019t even started yet",
+    "id": 4
+  },
+  {
+    "archetype": "HOT_TAKE",
+    "text": "And so I think that combination of faster productivity growth, faster economic growth, and then slower population growth and less immigration actually means there's going to be much less of this kind of dystopian no jobs' thing. I just think it's probably totally off pace.",
+    "guest": "Co-founder, a16z",
+    "episode": "Marc Andreessen: The real AI boom hasn\u2019t even started yet",
+    "id": 5
+  },
+  {
+    "archetype": "PREDICTION",
+    "text": "Instead of saying, \"Oh, we don't need to solve for that,\" or, \"That's not something that's in the most addressable next thing.\"",
+    "guest": "VP Product, Google Search",
+    "episode": "Inside Google's AI turnaround: The rise of AI Mode, strategy behind AI Overviews, and their vision for AI-powered search",
+    "id": 6
+  },
+  {
+    "archetype": "HOT_TAKE",
+    "text": "You have to think about what are the constraints that hold you back that they can actually help you a lot with. And people miss out on this all the time, of not asking for what they need to be successful, especially when the ask from the executive seems unreasonable.",
+    "guest": "VP Product, Webflow",
+    "episode": "The art of influence: The single most important skill that AI can\u2019t replace",
+    "id": 7
+  },
+  {
+    "archetype": "HOT_TAKE",
+    "text": "I think going through some real just easy, fun watches lately. I'm rewatching Suits again, but Ted Lasso is a favorite, and I just tore through Never Have I Ever, which is fun because John McEnroe narrates it, which is hilarious.",
+    "guest": "Researcher, DORA",
+    "episode": "How to measure AI developer productivity in 2025",
+    "id": 8
+  },
+  {
+    "archetype": "TACTIC",
+    "text": "Figuring out how to leverage them and incorporate it will definitely be of paramount importance.",
+    "guest": "CEO, Mercor",
+    "episode": "Why experts writing AI evals is creating the fastest-growing companies in history",
+    "id": 9
+  },
+  {
+    "archetype": "HOT_TAKE",
+    "text": "And then I think over the past year or so, rubrics and verifiers have become very important. And rubrics and verifiers are like learning by being graded and getting detailed feedback on where you went wrong.",
+    "guest": "CEO, Surge AI",
+    "episode": "The 100-person AI lab that became Anthropic and Google's secret weapon",
+    "id": 10
+  },
+  {
+    "archetype": "PREDICTION",
+    "text": "Do you think there will be strategy docs in the future? That's going to be interesting.",
+    "guest": "VP Product, Microsoft",
+    "episode": "How 80,000 companies build with AI: products as organisms, the death of org charts, and why agents will outnumber employees by 2026",
+    "id": 11
+  },
+  {
+    "archetype": "HOT_TAKE",
+    "text": "And so that's the big shift that I'm seeing. And I think I have opinions about it now, but ask me in three months and it might actually change even more.",
+    "guest": "Product Designer, Figma",
+    "episode": "Jenny Wen",
+    "id": 12
+  },
+  {
+    "archetype": "HOT_TAKE",
+    "text": "And then they would send a message and then one person would be like, \"I didn't get a notification. This is bullshit.\"",
+    "guest": "Co-founder, Slack",
+    "episode": "Slack founder: Mental models for building products people love ft. Stewart Butterfield",
+    "id": 13
+  },
+  {
+    "archetype": "HOT_TAKE",
+    "text": "What I was trying to get out in Good Product Manager, Bad Product Manager, was the job is fundamentally a leadership job. And it's a tricky leadership job because nobody is actually reporting to you.",
+    "guest": "Co-founder, a16z",
+    "episode": "$46B of hard truths from Ben Horowitz: Why founders fail and why you need to run toward fear (a16z co-founder)",
+    "id": 14
+  },
+  {
+    "archetype": "HOT_TAKE",
+    "text": "Yeah, absolutely. And if you're not making painful choices, then you're not actually doing it.",
+    "guest": "Founder, Glue Club",
+    "episode": "The high-growth handbook: Molly Graham\u2019s frameworks for leading through chaos, change, and scale",
+    "id": 15
+  },
+  {
+    "archetype": "HOT_TAKE",
+    "text": "I think there sure, actually. Because I wrote a book called Marketing Lessons from the Grateful Dead, and there's so much... The Grateful Dead were like the ultimate Silicon Valley startup. They started in 1964... Do you know where they started, Lenny?",
+    "guest": "Co-founder, HubSpot",
+    "episode": "Sequoia CEO coach: Why it\u2019s never been easier to start a company, and never been harder to scale one",
+    "id": 16
+  },
+  {
+    "archetype": "HOT_TAKE",
+    "text": "... which actually is quite good. But we watched the original, we watched them all. But it was in Next Generation where they actually developed an actual design language for the computers. If you watch the original series, they just had, like, basically knobs with lights.",
+    "guest": "Co-founder, a16z",
+    "episode": "Marc Andreessen: The real AI boom hasn\u2019t even started yet",
+    "id": 17
+  },
+  {
+    "archetype": "HOT_TAKE",
+    "text": "You can never write anything down and you will still have a culture. It will be created through the actions and the decisions that you make and that your founder makes. So that would be a huge one.",
+    "guest": "Founder, Glue Club",
+    "episode": "The high-growth handbook: Molly Graham\u2019s frameworks for leading through chaos, change, and scale",
+    "id": 18
+  },
+  {
+    "archetype": "ANTI_TACTIC",
+    "text": "Yeah, exactly. Right? So yeah, I would say I don't propose to have answers here, but more just like the smartest people I know or many of the smartest people I know are thinking hard about this.",
+    "guest": "Co-founder, a16z",
+    "episode": "Marc Andreessen: The real AI boom hasn\u2019t even started yet",
+    "id": 19
+  },
+  {
+    "archetype": "TACTIC",
+    "text": "So that's the first step of solving for clarity. There are more, which is the second layer, but I assume you may have some questions on this one.",
+    "guest": "Vibe Coder, Lovable",
+    "episode": "The rise of the professional vibe coder (a new AI-era job)",
+    "id": 20
+  },
+  {
+    "archetype": "WAR_STORY",
+    "text": "I remember reading something, this was maybe very early versions of ACM magazine, or something, where people were saying, \"No. It's not the same thing.\" Like, \"This isn't really coding.\" And they called it a programming. I think coding is a new word.",
+    "guest": "Engineer, Cursor",
+    "episode": "Boris Cherny",
+    "id": 21
+  },
+  {
+    "archetype": "WAR_STORY",
+    "text": "Google, when I was there, felt like two PhD students paradise. Facebook felt like 19-year-old hacker's dorm room. 80% of the culture of a company is literally defined by the personality of the founder. Our job as operators or as leaders is to help articulate the culture that they're creating.",
+    "guest": "Founder, Glue Club",
+    "episode": "The high-growth handbook: Molly Graham\u2019s frameworks for leading through chaos, change, and scale",
+    "id": 22
+  },
+  {
+    "archetype": "ANTI_TACTIC",
+    "text": "That's exactly right. And you don't have to do it in this order. These are just four kinds of questions.",
+    "guest": "CIO",
+    "episode": "A guide to difficult conversations, building high-trust teams, and designing a life you love",
+    "id": 23
+  },
+  {
+    "archetype": "HOT_TAKE",
+    "text": "We started working with all of the top AI labs. What the labs need is labor marketplace. They actually need extraordinary professionals that can measure model capabilities.",
+    "guest": "CEO, Mercor",
+    "episode": "Why experts writing AI evals is creating the fastest-growing companies in history",
+    "id": 24
+  },
+  {
+    "archetype": "HOT_TAKE",
+    "text": "Yeah. So she's good at prompting us with it's actually going around the world and then we just bullshit about it.",
+    "guest": "Partner, Slow Ventures",
+    "episode": "How to show up in any room with a low heart rate: Silicon Valley\u2019s missing etiquette playbook",
+    "id": 25
+  },
+  {
+    "archetype": "PREDICTION",
+    "text": "So I think these RL environments are going to be really interesting playgrounds for the models to learn from that will essentially be simulations and mimics in real world, and so they'll hopefully get better and better at real tasks compared to all these contrived environments.",
+    "guest": "CEO, Surge AI",
+    "episode": "The 100-person AI lab that became Anthropic and Google's secret weapon",
+    "id": 26
+  },
+  {
+    "archetype": "HOT_TAKE",
+    "text": "Because if you can't, you're never going to go... actually think about overcoming the variety of different hurdles, whether it's other startups or other incumbent tools that are trying to start doing the same thing.",
+    "guest": "CEO, Gamma",
+    "episode": "\u201cDumbest idea I\u2019ve heard\u201d to $100M ARR: Inside the rise of Gamma",
+    "id": 27
+  },
+  {
+    "archetype": "PREDICTION",
+    "text": "And so it starts when COVID first hits. And then it sort of as it plays out over the next few months, it intersects, and it sort of extends into the summer of 2020. So, kind of the George Floyd moment and then protests and riots and kind of everything.",
+    "guest": "Co-founder, a16z",
+    "episode": "Marc Andreessen: The real AI boom hasn\u2019t even started yet",
+    "id": 28
+  },
+  {
+    "archetype": "HOT_TAKE",
+    "text": "As an executive, as a leader, your job is to preserve that intensity at its highest possible level. You've had a couple really interesting experiences with your own startup. We talk in Silicon Valley about never quit, but that is complete absolute venture capital.",
+    "guest": "COO, Rippling",
+    "episode": "10 contrarian leadership truths every leader needs to hear",
+    "id": 29
+  },
+  {
+    "archetype": "HOT_TAKE",
+    "text": "I agree with that. I actually think whether you talk about someone who used to be a PM or someone who used to be a designer or called an engineer, the skill is more like being a CEO now, which is what are we building and why?",
+    "guest": "Partner, Khosla Ventures",
+    "episode": "Hard truths about building in the AI era",
+    "id": 30
+  },
+  {
+    "archetype": "PREDICTION",
+    "text": "It was, \"In the long run, the measure of our success will be the amount of value we create for customers.\"",
+    "guest": "Co-founder, Slack",
+    "episode": "Slack founder: Mental models for building products people love ft. Stewart Butterfield",
+    "id": 31
+  },
+  {
+    "archetype": "ANTI_TACTIC",
+    "text": "It's very difficult for me to catch mistakes. What I'll do is basically /review. This tells Claude to start reviewing its own code, but what's even cooler is I have Codex as well as Cursor open. I will have each of them review the code.",
+    "guest": "Product Manager, Meta",
+    "episode": "The non-technical PM\u2019s guide to building with Cursor",
+    "id": 32
+  },
+  {
+    "archetype": "PREDICTION",
+    "text": "So there's going to be a number of cases, where as a PM, the right thing to do is to be like, \"Screw it. I'm shipping and I'm going it the whole way.\" But I'm talking here more about the larger companies, more scaled businesses.",
+    "guest": "Product Lead, Anthropic",
+    "episode": "Anthropic\u2019s $1B to $19B growth run: how Claude became the fastest-growing AI product in history",
+    "id": 33
+  },
+  {
+    "archetype": "PREDICTION",
+    "text": "Yeah. So I'm a little embarrassed by this answer, but I'm going to be honest.",
+    "guest": "COO, Rippling",
+    "episode": "10 contrarian leadership truths every leader needs to hear",
+    "id": 34
+  },
+  {
+    "archetype": "ANTI_TACTIC",
+    "text": "I just go off of memory because I listen to a lot of episodes, but I don't-",
+    "guest": "Founder, WP Engine",
+    "episode": "5 questions to ask when your product stops growing",
+    "id": 35
+  },
+  {
+    "archetype": "PREDICTION",
+    "text": "It's going to be kicked off. Our industry is very much in stress. Nothing's constant. Everyone's in a state of alert. If you talk to product leaders three years ago, their day was largely moving information. The information mover is essentially going to become a dinosaur.",
+    "guest": "VP Product, Meta",
+    "episode": "Why half of product managers are in trouble",
+    "id": 36
+  },
+  {
+    "archetype": "ANTI_TACTIC",
+    "text": "I thought that was interesting. I don't know if I'd recommend it to your readers, but I thought I always look for things that I'm... unnatural stories that exist right in plain sight. So that was an example of that.",
+    "guest": "VP Product, Meta",
+    "episode": "Why half of product managers are in trouble",
+    "id": 37
+  },
+  {
+    "archetype": "TACTIC",
+    "text": "So I just encourage taking that first step, just run an A/B test, find a third-party tool or something that you can integrate quickly or even just work with your engineers to spin something up. Just get in the practice of crawl then walk then run type of thing.",
+    "guest": "Growth Leader",
+    "episode": "How to find hidden growth opportunities in your product",
+    "id": 38
+  },
+  {
+    "archetype": "ANTI_TACTIC",
+    "text": "Yeah. Yeah. And basically, I don't know, if you almost had their skillset, it would look like a block instead of a T.",
+    "guest": "Product Designer, Figma",
+    "episode": "Jenny Wen",
+    "id": 39
+  },
+  {
+    "archetype": "ANTI_TACTIC",
+    "text": "User retention is gold for consumer subscription companies. If you don't retain your users, then a lot of the onus is on getting them to pay on day one.",
+    "guest": "Growth Leader",
+    "episode": "How to find hidden growth opportunities in your product",
+    "id": 40
+  },
+  {
+    "archetype": "ANTI_TACTIC",
+    "text": "Absolutely. Don't care about how they talk to me. I'm using them to get stuff done. Yeah.",
+    "guest": "Open Source Creator, Independent",
+    "episode": "An AI state of the union: We\u2019ve passed the inflection point, dark factories are coming, and automation timelines",
+    "id": 41
+  },
+  {
+    "archetype": "ANTI_TACTIC",
+    "text": "For me, this is super important because I'm not technical and I'm not a developer. And I'll also use /learning opportunity a bunch during this to learn about stuff that I don't understand or don't fully grasp.",
+    "guest": "Product Manager, Meta",
+    "episode": "The non-technical PM\u2019s guide to building with Cursor",
+    "id": 42
+  },
+  {
+    "archetype": "PREDICTION",
+    "text": "Here's what's going to happen. Any tool, Lovable or Cursor or Claude, whatever tool you talk about is going to do this. It's going to be like, \"Okay, let me start investigating.\" And then your code base gets bigger and bigger and bigger and bigger and bigger.",
+    "guest": "Vibe Coder, Lovable",
+    "episode": "The rise of the professional vibe coder (a new AI-era job)",
+    "id": 43
+  },
+  {
+    "archetype": "PREDICTION",
+    "text": "But I do think in the meantime, it's going to be very disruptive, and it's going to be painful for a lot of people. And, again, as a society, this is a conversation that we have to have, and this is a thing that we have to figure out together.",
+    "guest": "Engineer, Cursor",
+    "episode": "Boris Cherny",
+    "id": 44
+  },
+  {
+    "archetype": "FRAMEWORK",
+    "text": "Yeah. I think it's almost like, do you care about how you get there? And in the same way, so I made this tabloid analogy earlier, but would you sell tabloids in order to fund, I don't know, some other newspaper?",
+    "guest": "CEO, Surge AI",
+    "episode": "The 100-person AI lab that became Anthropic and Google's secret weapon",
+    "id": 45
+  },
+  {
+    "archetype": "ANTI_TACTIC",
+    "text": "A tipping guide. Well, you know what would be funny is there's a great episode of Seinfeld that's all about the tipping calculator. I don't know if you're a Seinfeld guy.",
+    "guest": "Partner, Slow Ventures",
+    "episode": "How to show up in any room with a low heart rate: Silicon Valley\u2019s missing etiquette playbook",
+    "id": 46
+  },
+  {
+    "archetype": "FRAMEWORK",
+    "text": "So, you could think of it as a historical artifact. You could think of it as-",
+    "guest": "Engineer, Cursor",
+    "episode": "Boris Cherny",
+    "id": 47
+  },
+  {
+    "archetype": "ANTI_TACTIC",
+    "text": "Yeah, I'll share with it. It's got some M on it. I don't even know what it's called.",
+    "guest": "CPO, LaunchDarkly",
+    "episode": "From skeptic to true believer: How OpenClaw changed my life",
+    "id": 48
+  },
+  {
+    "archetype": "ANTI_TACTIC",
+    "text": "But as a CEO, it's not like you don't do any of it, but it is very, very small compared to it. So I like to make things just very stark. So you get what I'm saying? I don't like to hedge it.",
+    "guest": "Co-founder, a16z",
+    "episode": "$46B of hard truths from Ben Horowitz: Why founders fail and why you need to run toward fear (a16z co-founder)",
+    "id": 49
+  },
+  {
+    "archetype": "ANTI_TACTIC",
+    "text": "I flip between them, but I do feel like and I'm hoping that the new release of the software keeps us in the lane. I don't love it changing lanes, but it's-",
+    "guest": "VP Product, Meta",
+    "episode": "Why half of product managers are in trouble",
+    "id": 50
+  },
+  {
+    "archetype": "ANTI_TACTIC",
+    "text": "Yeah, I don't think that the core rise of humanity, it will change, and I think that these things are pretty core to how humans have been successful for a long time.",
+    "guest": "CEO, Scale AI",
+    "episode": "First interview with Scale AI\u2019s CEO: $14B Meta deal, what\u2019s working in enterprise AI, and what frontier labs are building next",
+    "id": 51
+  },
+  {
+    "archetype": "PREDICTION",
+    "text": "Right. General categories are fine. Now I will say the next category for lead time for changes by the day is if lead time is between a day and a week.",
+    "guest": "Researcher, DORA",
+    "episode": "How to measure AI developer productivity in 2025",
+    "id": 52
+  },
+  {
+    "archetype": "ANTI_TACTIC",
+    "text": "If they won't give you time on the calendar, you could say, listen, great. Feel free to email me. Maybe they're just being honest and they don't have their calendar available, but nine times out of 10, it's usually I don't have the heart to tell you I'm not interested.",
+    "guest": "Co-founder, Jellyfish",
+    "episode": "\"Sell the alpha, not the feature\": The enterprise sales playbook for $1M to $10M ARR",
+    "id": 53
+  },
+  {
+    "archetype": "PREDICTION",
+    "text": "Yeah. When I think about the future of AI in the sense of belief, that relationship is going to be sacred, the relationship between AI and the human is going to be inaudible 01:07:10. Do you know what Nomophobia means?",
+    "guest": "CPO, LinkedIn",
+    "episode": "Why LinkedIn is turning PMs into AI-powered \"full stack builders\u201d",
+    "id": 54
+  },
+  {
+    "archetype": "PREDICTION",
+    "text": "You have to grow as fast as your company is growing if you really want to take advantage, both learning to give away what you've gotten good at and move on to the next shiny pile of Legos.",
+    "guest": "Founder, Glue Club",
+    "episode": "The high-growth handbook: Molly Graham\u2019s frameworks for leading through chaos, change, and scale",
+    "id": 55
+  },
+  {
+    "archetype": "PREDICTION",
+    "text": "And particularly in this world, the one that's changing as fast as it is, nobody knows. Nobody knows what the answers are in a lot of cases, the war will be won by the people that are good exploring and figuring it out.",
+    "guest": "Founder, Glue Club",
+    "episode": "The high-growth handbook: Molly Graham\u2019s frameworks for leading through chaos, change, and scale",
+    "id": 56
+  },
+  {
+    "archetype": "TACTIC",
+    "text": "I mean, there's typically three things I think about. If I were to write a book about how to build great products, there'd be three chapters. I mean there'd probably more than that, but three chapters.",
+    "guest": "VP Product, Google Search",
+    "episode": "Inside Google's AI turnaround: The rise of AI Mode, strategy behind AI Overviews, and their vision for AI-powered search",
+    "id": 57
+  },
+  {
+    "archetype": "PREDICTION",
+    "text": "But what we realized was people were signing up for Slack, and it's one engineer on this team inside of this larger organization, inside this larger company, and they would pull in the person next to them and they would say, \"Let's try it out.\"",
+    "guest": "Co-founder, Slack",
+    "episode": "Slack founder: Mental models for building products people love ft. Stewart Butterfield",
+    "id": 58
+  },
+  {
+    "archetype": "FRAMEWORK",
+    "text": "Boy, did I start creating agents? So now we have Polly, Finn, Max, Howie, Kelly, Holly. Sam is my salesperson. What Sam does has real economic value. Last year before the beginning of the year, I was paying somebody 10 hours a week to do this.",
+    "guest": "CPO, LaunchDarkly",
+    "episode": "From skeptic to true believer: How OpenClaw changed my life",
+    "id": 59
+  },
+  {
+    "archetype": "PREDICTION",
+    "text": "If you're going to be extraordinary in any skill, you can't follow a playbook. Otherwise, by definition, lots of other people would be the top 10 basis points, but you can get a lot better by learning techniques. So for example, let's share a couple.",
+    "guest": "Partner, Khosla Ventures",
+    "episode": "Hard truths about building in the AI era",
+    "id": 60
+  },
+  {
+    "archetype": "FRAMEWORK",
+    "text": "So SFT stands for supervised fine-tuning. So again, I think often in terms of these human analogies, and so SFT is a lot like mimicking a master and copying what they do.",
+    "guest": "CEO, Surge AI",
+    "episode": "The 100-person AI lab that became Anthropic and Google's secret weapon",
+    "id": 61
+  },
+  {
+    "archetype": "PREDICTION",
+    "text": "Yeah. Yeah. We do see that people use also different tools. So, for example, our designers they use the Claude desktop app a lot more to do their coding. So, you just download the desktop app. There's a code tab. It's right next to Cowork.",
+    "guest": "Engineer, Cursor",
+    "episode": "Boris Cherny",
+    "id": 62
+  },
+  {
+    "archetype": "FRAMEWORK",
+    "text": "You asked me a very simple question, I gave you a very long-winded answer, but these frameworks help me design systems that scale across one going to 2,000 technical workers.",
+    "guest": "COO, Rippling",
+    "episode": "10 contrarian leadership truths every leader needs to hear",
+    "id": 63
+  },
+  {
+    "archetype": "TACTIC",
+    "text": "And so all of these types of accompaniments, I think are going to get better. The model's going to get better at understanding how to use them. And so over time, I think that the need to human review this really, really decreases significantly.",
+    "guest": "Product Lead, Anthropic",
+    "episode": "Anthropic\u2019s $1B to $19B growth run: how Claude became the fastest-growing AI product in history",
+    "id": 64
+  },
+  {
+    "archetype": "WAR_STORY",
+    "text": "And so I've been really surprised at the complexity of the business. And you know what? I was not surprised at how good you are at it, but I'm glad we're partners because you're very good at it.",
+    "guest": "CPO, LaunchDarkly",
+    "episode": "From skeptic to true believer: How OpenClaw changed my life",
+    "id": 65
+  },
+  {
+    "archetype": "FRAMEWORK",
+    "text": "Significantly more valuable. Webflow saw a 6X conversion rate difference between LLM traffic and Google Search traffic.",
+    "guest": "CEO, Graphite",
+    "episode": "The ultimate guide to AEO: How to get ChatGPT to recommend your product",
+    "id": 66
+  },
+  {
+    "archetype": "FRAMEWORK",
+    "text": "Yeah, I would agree. There are probably some good examples of large vertical SaaS platforms that are SMB, but even they wind up with Velocity sales team. So yeah, I don't know that I can think of a 100 billion company that's PLG-only.",
+    "guest": "COO, Vercel",
+    "episode": "What world-class GTM looks like in 2026",
+    "id": 67
+  },
+  {
+    "archetype": "WAR_STORY",
+    "text": "Yeah, I remember Alex Wang from Scale very early days. I probably still has his emails when he was starting Scale. He was very kind. He keeps sending me emails about how image that inspired Scale. I was very pleased to see that.",
+    "guest": "Co-director, Stanford AI Lab",
+    "episode": "The Godmother of AI on jobs, robots & why world models are next",
+    "id": 68
+  },
+  {
+    "archetype": "TACTIC",
+    "text": "Right. I've also recently heard, \"If you want a village, be a villager.\" And so this idea of just building community, reaching out, being there for other people and really taking that first step, even if it's scary or overwhelming, can really make a difference.",
+    "guest": "VP Product, Webflow",
+    "episode": "The art of influence: The single most important skill that AI can\u2019t replace",
+    "id": 69
+  },
+  {
+    "archetype": "TACTIC",
+    "text": "And so often, and I would say early in a CEO's career, a lot of it is just not knowing how to have the conversation.",
+    "guest": "Co-founder, a16z",
+    "episode": "$46B of hard truths from Ben Horowitz: Why founders fail and why you need to run toward fear (a16z co-founder)",
+    "id": 70
+  },
+  {
+    "archetype": "TACTIC",
+    "text": "I think some examples of this are people layering very strict workflows on a model, for example, to say, like, \"You must do step one, and then step two, then step three.\" And you have this very fancy orchestrator doing this.",
+    "guest": "Engineer, Cursor",
+    "episode": "Boris Cherny",
+    "id": 71
+  },
+  {
+    "archetype": "WAR_STORY",
+    "text": "It does. It feels a little more like when I was at Google the first time through right now where you just have so much stuff and this kind of fun curiosity happening where people want to try things and ship things and yeah, hopefully that continues.",
+    "guest": "VP Product, Google Search",
+    "episode": "Inside Google's AI turnaround: The rise of AI Mode, strategy behind AI Overviews, and their vision for AI-powered search",
+    "id": 72
+  },
+  {
+    "archetype": "FRAMEWORK",
+    "text": "I was thinking about what is the right historical analog for this? Because somehow we have to situate this thing in history, and figure out when have we gone through similar transitions? What's the right mental model for this?",
+    "guest": "Engineer, Cursor",
+    "episode": "Boris Cherny",
+    "id": 73
+  },
+  {
+    "archetype": "FRAMEWORK",
+    "text": "I have to admit, I have not watched... I can't think of a single movie or TV show that I have watched in the last while, so I'm sure, I'm looking forward to watching a lot of great ones post-AGI.",
+    "guest": "CEO, Cognition",
+    "episode": "How Devin replaces your junior engineers with infinite AI interns that never sleep",
+    "id": 74
+  },
+  {
+    "archetype": "FRAMEWORK",
+    "text": "People look at Rippling from the outside, I think they think of us as payroll and HR or whatever, which is cool. It's a bit like saying Microsoft is a desktop operating system company or it's like every company starts from somewhere.",
+    "guest": "COO, Rippling",
+    "episode": "10 contrarian leadership truths every leader needs to hear",
+    "id": 75
+  },
+  {
+    "archetype": "TACTIC",
+    "text": "But much of growth and business is things that are not immediately obvious for how to measure, but anything could be measured, and so that's my third record.",
+    "guest": "CEO, Graphite",
+    "episode": "The ultimate guide to AEO: How to get ChatGPT to recommend your product",
+    "id": 76
+  },
+  {
+    "archetype": "FRAMEWORK",
+    "text": "This framework, the PQL, given these lightweight checklists, iterated on consistently in response to everything we learn as we go, constitutes a very nice lightweight way to lower the beta of the system with hopefully only a modicum of negative impact on the alpha for how we build product.",
+    "guest": "COO, Rippling",
+    "episode": "10 contrarian leadership truths every leader needs to hear",
+    "id": 77
+  },
+  {
+    "archetype": "FRAMEWORK",
+    "text": "At the max, I probably had, I think, 12, 15 designers or so, and I had a few managers as well.",
+    "guest": "Product Designer, Figma",
+    "episode": "Jenny Wen",
+    "id": 78
+  },
+  {
+    "archetype": "FRAMEWORK",
+    "text": "And within the DORA framework, we would say, \"If we want to improve our speed and stability, we think improving build time would help. And then how would I measure build time?\" These are the-",
+    "guest": "Researcher, DORA",
+    "episode": "How to measure AI developer productivity in 2025",
+    "id": 79
+  },
+  {
+    "archetype": "FRAMEWORK",
+    "text": "They are significantly more valuable. So Webflow, we saw a 6X conversion rate difference between LLM traffic and Google Search traffic.",
+    "guest": "CEO, Graphite",
+    "episode": "The ultimate guide to AEO: How to get ChatGPT to recommend your product",
+    "id": 80
+  },
+  {
+    "archetype": "FRAMEWORK",
+    "text": "There's a six part framework that I have, which is in descending order of importance, and on how to build great companies. This is-",
+    "guest": "EVP, Cisco",
+    "episode": "Jeetu Patel",
+    "id": 81
+  },
+  {
+    "archetype": "FRAMEWORK",
+    "text": "At an emotional level, I feel like I've always had to learn new things. And as a programmer, it doesn't feel that new, because there's always new frameworks. There's always new languages. It's just something that we're quite comfortable with in the field.",
+    "guest": "Engineer, Cursor",
+    "episode": "Boris Cherny",
+    "id": 82
+  },
+  {
+    "archetype": "TACTIC",
+    "text": "But for the first few months it wasn't a hit. People used it, but a lot of people couldn't figure out how to use it. They didn't know what it was for. The model still wasn't very good.",
+    "guest": "Engineer, Cursor",
+    "episode": "Boris Cherny",
+    "id": 83
+  },
+  {
+    "archetype": "TACTIC",
+    "text": "When we're talking about LLM judge here, we're saying that this is a complex failure mode and we don't know how to evaluate in an automated way. So maybe we will try to use an LLM to evaluate this very, very narrow, specific failure mode of handoffs.",
+    "guest": "Leader, Tech",
+    "episode": "Why AI evals are the hottest new skill for product builders",
+    "id": 84
+  },
+  {
+    "archetype": "TACTIC",
+    "text": "Yep. That or it could be... Yeah, I mean we're lucky a lot of our designers also know how to code, so even before the recent tools, come up with some sort of functional prototype and then be able to ship that so people can start playing with it.",
+    "guest": "CEO, Gamma",
+    "episode": "\u201cDumbest idea I\u2019ve heard\u201d to $100M ARR: Inside the rise of Gamma",
+    "id": 85
+  },
+  {
+    "archetype": "WAR_STORY",
+    "text": "I have zero technical background, did music in high school ... when Sonnet 3.5 came out. I remember watching a YouTube video building apps using Bolt or Lovable. It basically felt like someone came up to me and said, \"You have superpowers now.\"",
+    "guest": "Product Manager, Meta",
+    "episode": "The non-technical PM\u2019s guide to building with Cursor",
+    "id": 86
+  },
+  {
+    "archetype": "TACTIC",
+    "text": "And I've been on that crusade for 25 years. For those who are interested, you can link to it. I gave a speech at Ramp, how to hire, the talks in detail. I also recommend Eric, CEO of Ramp's speech, which is fairly similar. Both videos are online.",
+    "guest": "Partner, Khosla Ventures",
+    "episode": "Hard truths about building in the AI era",
+    "id": 87
+  },
+  {
+    "archetype": "ANTI_TACTIC",
+    "text": "People have been burned by evals in the past. People have done evals badly, so then they didn't trust it anymore, and then they're like, \"Oh, I'm anti evals.\"",
+    "guest": "Leader, Tech",
+    "episode": "Why AI evals are the hottest new skill for product builders",
+    "id": 88
+  },
+  {
+    "archetype": "ANTI_TACTIC",
+    "text": "The fourth piece is just make sure it's concise so that you don't have to scroll on mobile phone.",
+    "guest": "Co-founder, Jellyfish",
+    "episode": "\"Sell the alpha, not the feature\": The enterprise sales playbook for $1M to $10M ARR",
+    "id": 89
+  },
+  {
+    "archetype": "PREDICTION",
+    "text": "Not every great thing is going to be invented by you. Facebook probably created the modern feed, but there's a feed for every single product. At the end of the day, you're just robbing your user base of the opportunity to have a better product.",
+    "guest": "VP Product, Google Search",
+    "episode": "Inside Google's AI turnaround: The rise of AI Mode, strategy behind AI Overviews, and their vision for AI-powered search",
+    "id": 90
+  },
+  {
+    "archetype": "HOT_TAKE",
+    "text": "Yeah, IO is one of the best product people I've ever worked with and one of my closest friends actually. So absolutely with him, and you on that one, yeah.",
+    "guest": "CTO, Block",
+    "episode": "How Block is becoming the most AI-native enterprise in the world",
+    "id": 91
+  },
+  {
+    "archetype": "PREDICTION",
+    "text": "I think by the end of the year everyone is going to be a product manager, and everyone codes. The title software engineer is going to start to go away. It's just going to be replaced by builder, and it's going to be painful for a lot of people.",
+    "guest": "Engineer, Cursor",
+    "episode": "Boris Cherny",
+    "id": 92
+  },
+  {
+    "archetype": "ANTI_TACTIC",
+    "text": "AI, regardless of your background, is an amplifier. If you don't know what you're doing, you're just going to produce garbage faster.",
+    "guest": "Vibe Coder, Lovable",
+    "episode": "The rise of the professional vibe coder (a new AI-era job)",
+    "id": 93
+  },
+  {
+    "archetype": "HOT_TAKE",
+    "text": "LinkedIn, email, you would be shocked to hear this, but cold calling. I never used to do this. It is one of the most... The interest rates on cold calling are a lot higher than email in many cases.",
+    "guest": "Co-founder, Jellyfish",
+    "episode": "\"Sell the alpha, not the feature\": The enterprise sales playbook for $1M to $10M ARR",
+    "id": 94
+  },
+  {
+    "archetype": "HOT_TAKE",
+    "text": "Yeah, I might use Apple Notes or directly into Canva Docs, and then I actually just do the brain dump into Canva Docs and then just summarize them.",
+    "guest": "CEO, Canva",
+    "episode": "The woman behind Canva shares how she built a $42B company from nothing",
+    "id": 95
+  },
+  {
+    "archetype": "HOT_TAKE",
+    "text": "Early on, things like creating the outline, Perplexity was actually great. Not one that people talk about as often, but creating the outline and doing web search and actually integrating some of those elements together for us was pretty powerful.",
+    "guest": "CEO, Gamma",
+    "episode": "\u201cDumbest idea I\u2019ve heard\u201d to $100M ARR: Inside the rise of Gamma",
+    "id": 96
+  },
+  {
+    "archetype": "PREDICTION",
+    "text": "Yeah, sign up for the course and then you'll get a bunch of emails. Everything will be clear, hopefully.",
+    "guest": "Leader, Tech",
+    "episode": "Why AI evals are the hottest new skill for product builders",
+    "id": 97
+  },
+  {
+    "archetype": "HOT_TAKE",
+    "text": "You're going to project totally the wrong vibe. This isn't your one shot. You'll have other opportunities. You kind of want to show up with the self-confidence and the calm of abundance. This is part of the story. This is not the entire story.",
+    "guest": "Partner, Slow Ventures",
+    "episode": "How to show up in any room with a low heart rate: Silicon Valley\u2019s missing etiquette playbook",
+    "id": 98
+  },
+  {
+    "archetype": "PREDICTION",
+    "text": "So it focuses ... In the next request, instead of focusing on reading, it spends another 30% of tokens trying to come up with an apology. Again, I'm not educated, but if you ever read a stream of ChatGPT's thinking in thinking models, you see exactly what I mean.",
+    "guest": "Vibe Coder, Lovable",
+    "episode": "The rise of the professional vibe coder (a new AI-era job)",
+    "id": 99
+  },
+  {
+    "archetype": "ANTI_TACTIC",
+    "text": "I don't think anyone can do it. People talk about 9-9-6, it's way more than that. Founders are seven days a week, they're always on, inaudible 00:00:44 Sunday nights, it's full contact.",
+    "guest": "Co-founder, HubSpot",
+    "episode": "Sequoia CEO coach: Why it\u2019s never been easier to start a company, and never been harder to scale one",
+    "id": 100
+  }
+]

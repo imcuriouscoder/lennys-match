@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lenny Match</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=2">
+    
+    <!-- html2canvas for Share functionality -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+    <script src="data.js?v=2" defer></script>
+    <script src="app.js?v=2" defer></script>
+</head>
+<body>
+
+    <div id="app-container">
+        
+        <!-- ==============================
+             SCREEN 1: INTRO 
+             ============================== -->
+        <section id="screen-intro" class="screen active">
+            <div class="intro-content">
+                <div class="logo-area">
+                    <h1 class="font-display">LENNY<br>MATCH</h1>
+                    <p class="subtitle font-mono">A 60-second podcast-quote-tasting game.</p>
+                </div>
+                
+                <div class="intro-modes">
+                    <button id="btn-start" class="btn-primary font-display">START GAME</button>
+                </div>
+                
+                <div class="how-it-works">
+                    <p>Swipe through 10 quotes. For each quote, react with ❤️ Love or 🔪 Pass.</p>
+                    <p>Discover your archetype based on 6 core thinking styles:</p>
+                    <div class="arch-intro-grid font-mono">
+                        <span>🎯 TACTIC</span>
+                        <span>⚠️ ANTI-TACTIC</span>
+                        <span>📖 WAR STORY</span>
+                        <span>🧠 FRAMEWORK</span>
+                        <span>🔥 HOT TAKE</span>
+                        <span>🔮 PREDICTION</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================
+             SCREEN 2: QUOTE CARD (SWIPE)
+             ============================== -->
+        <section id="screen-quote" class="screen hidden">
+            <header class="game-header">
+                <button id="btn-quit" class="btn-icon">✕</button>
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+                <span id="quote-counter" class="font-mono">1/10</span>
+            </header>
+
+            <div class="card-stack-container">
+                <div id="quote-card-element" class="quote-card">
+                    <!-- Indicators -->
+                    <div class="card-indicators" id="card-indicators">
+                        <div class="indicator active"></div>
+                        <div class="indicator"></div>
+                        <div class="indicator"></div>
+                    </div>
+                    
+                    <!-- Tap zones removed, handled natively in JS via coordinates -->
+
+                    <div class="card-inner" id="card-inner-content">
+                        <!-- Page 0: Quote -->
+                        <div id="page-quote" class="card-page">
+                            <div id="quote-archetype-label" class="quote-tag font-mono">🎯 TACTIC</div>
+                            <div id="quote-text" class="quote-text font-inter">Loading...</div>
+                        </div>
+                        
+                        <!-- Page 1: Speaker -->
+                        <div id="page-speaker" class="card-page hidden">
+                            <span class="page-label font-mono">THE SPEAKER</span>
+                            <h2 id="quote-guest" class="speaker-role font-display">Guest Role</h2>
+                        </div>
+                        
+                        <!-- Page 2: Context -->
+                        <div id="page-context" class="card-page hidden">
+                            <span class="page-label font-mono">THE CONTEXT</span>
+                            <h2 id="quote-episode" class="context-episode font-display">Episode Name</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swipe-controls">
+                <div class="btn-group">
+                    <button id="btn-reject" class="btn-circle btn-reject" title="Pass">🔪</button>
+                    <span id="label-reject" class="btn-label font-inter font-bold">Pass</span>
+                </div>
+                <div class="btn-group">
+                    <button id="btn-love" class="btn-circle btn-love" title="Love">❤️</button>
+                    <span id="label-love" class="btn-label font-inter font-bold">Love</span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==============================
+             SCREEN 4: RESULTS
+             ============================== -->
+        <section id="screen-results" class="screen hidden">
+            <div class="results-header">
+                <span class="font-mono">YOUR CARD</span>
+                <button id="btn-restart" class="btn-icon">↺</button>
+            </div>
+            
+            <div class="card-container-wrapper">
+                <!-- THE CHARACTER CARD (Will be exported as PNG) -->
+                <div id="character-card-capture" class="hero-card">
+                    
+                    <div class="hero-card-header">
+                        <h2 id="result-name" class="font-display">THE HERETIC</h2>
+                        <p id="result-tagline" class="font-inter italic">"Rejects the playbook. Loves the meta."</p>
+                    </div>
+                    
+                    <div class="hero-card-body">
+                        <!-- Left Stats Rail -->
+                        <div class="stats-rail">
+                            <div class="stat-orb" id="orb-doer">
+                                <span class="val font-mono" id="val-doer">0</span>
+                                <span class="lbl font-mono">DOE</span>
+                            </div>
+                            <div class="stat-orb" id="orb-thinker">
+                                <span class="val font-mono" id="val-thinker">0</span>
+                                <span class="lbl font-mono">THI</span>
+                            </div>
+                            <div class="stat-orb" id="orb-disruptor">
+                                <span class="val font-mono" id="val-disruptor">0</span>
+                                <span class="lbl font-mono">DIS</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Art Slot -->
+                        <div class="art-slot" id="card-art">
+                            <div class="art-placeholder font-display" id="art-code">HRT</div>
+                        </div>
+                        
+                        <!-- Power Orb -->
+                        <div class="power-orb">
+                            <span id="val-power" class="val font-mono">50</span>
+                            <span class="lbl font-mono">POWER</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Dimension Bars -->
+                    <div class="dim-bars">
+                        <div class="dim-row">
+                            <span class="font-mono lbl">DOER</span>
+                            <div class="bar-bg"><div class="bar-fill bg-doer" id="bar-doer"></div></div>
+                            <span class="font-mono val" id="bar-val-doer">0</span>
+                        </div>
+                        <div class="dim-row">
+                            <span class="font-mono lbl">THINKER</span>
+                            <div class="bar-bg"><div class="bar-fill bg-thinker" id="bar-thinker"></div></div>
+                            <span class="font-mono val" id="bar-val-thinker">0</span>
+                        </div>
+                        <div class="dim-row">
+                            <span class="font-mono lbl">DISRUPTOR</span>
+                            <div class="bar-bg"><div class="bar-fill bg-disruptor" id="bar-disruptor"></div></div>
+                            <span class="font-mono val" id="bar-val-disruptor">0</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 6 Archetypes sub-scores -->
+                    <div class="arch-scores">
+                        <div class="font-mono arch-title">— 6 ARCHETYPES —</div>
+                        <div class="arch-grid font-mono">
+                            <div class="arch-item"><span id="lbl-tac">🎯 Tac</span> <strong id="val-tac">0</strong></div>
+                            <div class="arch-item"><span id="lbl-frm">🧠 Frm</span> <strong id="val-frm">0</strong></div>
+                            <div class="arch-item"><span id="lbl-hot">🔥 Hot</span> <strong id="val-hot">0</strong></div>
+                            <div class="arch-item"><span id="lbl-anti">⚠️ Anti</span> <strong id="val-anti">0</strong></div>
+                            <div class="arch-item"><span id="lbl-prd">🔮 Prd</span> <strong id="val-prd">0</strong></div>
+                            <div class="arch-item"><span id="lbl-war">📖 War</span> <strong id="val-war">0</strong></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Lore -->
+                    <div class="card-lore font-inter">
+                        <p id="result-lore">Lore goes here.</p>
+                    </div>
+                    
+                    <!-- Footer Code -->
+                    <div class="card-footer font-mono">
+                        <span id="result-code-footer">HRT</span> · LENNY MATCH
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-actions">
+                <button id="btn-share" class="btn-primary font-inter">📤 Download Card</button>
+            </div>
+            
+            <div class="playlist-section">
+                <h3 class="font-mono">YOUR PODCAST PLAYLIST</h3>
+                <div id="playlist-container" class="playlist-container">
+                    <!-- Playlist items will be injected here -->
+                </div>
+            </div>
+            
+            <!-- Output img for generated share image -->
+            <div id="share-output" class="hidden">
+                <img id="share-img" src="" alt="Your Character Card">
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>

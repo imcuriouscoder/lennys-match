@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lenny Match — Wireframes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Architects+Daughter&family=Special+Elite&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="wireframe-styles.css" />
+<style>
+  body { margin: 0; background: #ece6d8; font-family: "Architects Daughter", cursive; }
+</style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel" src="wireframe-primitives.jsx"></script>
+<script type="text/babel" src="wf-screens-intro.jsx"></script>
+<script type="text/babel" src="wf-screens-card.jsx"></script>
+<script type="text/babel" src="wf-screens-reveal.jsx"></script>
+<script type="text/babel" src="wf-screens-results.jsx"></script>
+<script type="text/babel" src="wf-screens-share.jsx"></script>
+
+<script type="text/babel" data-presets="react">
+function App() {
+  return (
+    <DesignCanvas
+      title="Lenny Match — Wireframes"
+      subtitle="A 60-second taste game · b&w lo-fi sketches · 5 screens × 3 directions each"
+    >
+      <DCSection id="intro" title="1 · Intro / Landing" subtitle="How the user enters the experience">
+        <DCArtboard id="intro-a" label="A · Editorial cold-open" width={360} height={700}><IntroA/></DCArtboard>
+        <DCArtboard id="intro-b" label="B · Stack-of-cards teaser" width={360} height={700}><IntroB/></DCArtboard>
+        <DCArtboard id="intro-c" label="C · Pick-your-mode menu" width={360} height={700}><IntroC/></DCArtboard>
+      </DCSection>
+
+      <DCSection id="card" title="2 · Quote Card (front)" subtitle="The swipe screen — Love · Reasonable · Reject">
+        <DCArtboard id="card-a" label="A · Vertical stack" width={360} height={700}><CardA/></DCArtboard>
+        <DCArtboard id="card-b" label="B · Tinder-style swipe" width={360} height={700}><CardB/></DCArtboard>
+        <DCArtboard id="card-c" label="C · Color-strip + chips" width={360} height={700}><CardC/></DCArtboard>
+      </DCSection>
+
+      <DCSection id="reveal" title="3 · Reveal" subtitle="Anonymized profile → real guest + episode + Spotify link">
+        <DCArtboard id="reveal-a" label="A · Card flips in place" width={360} height={700}><RevealA/></DCArtboard>
+        <DCArtboard id="reveal-b" label="B · Bottom-sheet rises" width={360} height={700}><RevealB/></DCArtboard>
+        <DCArtboard id="reveal-c" label="C · Side-flip compare" width={360} height={700}><RevealC/></DCArtboard>
+      </DCSection>
+
+      <DCSection id="results" title="4 · Results" subtitle="The character card — you are 1 of 7. Power · 3 dimensions · lore">
+        <DCArtboard id="results-a" label="A · Hero card portrait" width={360} height={760}><ResultsA/></DCArtboard>
+        <DCArtboard id="results-b" label="B · Card + 7-roster" width={360} height={760}><ResultsB/></DCArtboard>
+        <DCArtboard id="results-c" label="C · Card flip · front + back" width={360} height={760}><ResultsC/></DCArtboard>
+      </DCSection>
+
+      <DCSection id="share" title="5 · Shareable PNG" subtitle="The viral mechanic — generated via html2canvas">
+        <DCArtboard id="share-a" label="A · Portrait, bar-chart hero" width={420} height={540}><ShareA/></DCArtboard>
+        <DCArtboard id="share-b" label="B · Square IG/Twitter" width={480} height={480}><ShareB/></DCArtboard>
+        <DCArtboard id="share-c" label="C · Receipt / typewriter" width={340} height={600}><ShareC/></DCArtboard>
+      </DCSection>
+    </DesignCanvas>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+
+</body>
+</html>
