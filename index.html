@@ -62,14 +62,15 @@
 
             <div class="card-stack-container">
                 <div id="quote-card-element" class="quote-card">
-                    <!-- Indicators -->
+                    <!-- Page indicators -->
                     <div class="card-indicators" id="card-indicators">
                         <div class="indicator active"></div>
                         <div class="indicator"></div>
-                        <div class="indicator"></div>
                     </div>
-                    
-                    <!-- Tap zones removed, handled natively in JS via coordinates -->
+
+                    <!-- Chevron nav buttons -->
+                    <button class="card-nav-btn card-nav-prev hidden" id="btn-prev-page" aria-label="Previous">&#8249;</button>
+                    <button class="card-nav-btn card-nav-next" id="btn-next-page" aria-label="Next">&#8250;</button>
 
                     <div class="card-inner" id="card-inner-content">
                         <!-- Page 0: Quote -->
@@ -77,17 +78,11 @@
                             <div id="quote-archetype-label" class="quote-tag font-mono">🎯 TACTIC</div>
                             <div id="quote-text" class="quote-text font-inter">Loading...</div>
                         </div>
-                        
-                        <!-- Page 1: Speaker -->
+
+                        <!-- Page 1: Voice (anonymized role) -->
                         <div id="page-speaker" class="card-page hidden">
-                            <span class="page-label font-mono">THE SPEAKER</span>
-                            <h2 id="quote-guest" class="speaker-role font-display">Guest Role</h2>
-                        </div>
-                        
-                        <!-- Page 2: Context -->
-                        <div id="page-context" class="card-page hidden">
-                            <span class="page-label font-mono">THE CONTEXT</span>
-                            <h2 id="quote-episode" class="context-episode font-display">Episode Name</h2>
+                            <span class="page-label font-mono">THE VOICE</span>
+                            <h2 id="quote-guest" class="speaker-role font-display">Role</h2>
                         </div>
                     </div>
                 </div>

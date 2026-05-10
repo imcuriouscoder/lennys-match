@@ -41,15 +41,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const uiQuoteText = document.getElementById('quote-text');
     const uiQuoteTag = document.getElementById('quote-archetype-label');
     const uiQuoteGuest = document.getElementById('quote-guest');
-    const uiQuoteEpisode = document.getElementById('quote-episode');
     const uiQuoteCounter = document.getElementById('quote-counter');
     
-    // Pages
+    // Pages (2 only: quote + anonymous voice)
     const pages = [
         document.getElementById('page-quote'),
-        document.getElementById('page-speaker'),
-        document.getElementById('page-context')
+        document.getElementById('page-speaker')
     ];
+    const btnPrevPage = document.getElementById('btn-prev-page');
+    const btnNextPage = document.getElementById('btn-next-page');
 
     // Init
     function initGame() {
@@ -85,8 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         uiQuoteText.textContent = `"${quote.text}"`;
         uiQuoteTag.textContent = arch ? arch.label : "QUOTE";
-        uiQuoteGuest.textContent = quote.guest;
-        uiQuoteEpisode.textContent = quote.episode || "Unknown Episode";
+        uiQuoteGuest.textContent = quote.anon || quote.guest;
         
         // Remove previous tag classes
         uiQuoteTag.className = 'quote-tag font-mono';
@@ -114,16 +113,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function renderCardPage() {
-        // Render dots
+        const lastPage = pages.length - 1;
+
+        // Indicators
         const indicators = document.getElementById('card-indicators').children;
         for (let i = 0; i < indicators.length; i++) {
             indicators[i].className = i === currentCardPage ? 'indicator active' : 'indicator';
         }
-        
-        // Render pages
+
+        // Pages
         pages.forEach((p, index) => {
             if (p) p.className = index === currentCardPage ? 'card-page' : 'card-page hidden';
         });
+
+        // Chevrons
+        btnPrevPage.classList.toggle('hidden', currentCardPage === 0);
+        btnNextPage.classList.toggle('hidden', currentCardPage === lastPage);
     }
 
     function handleSwipe(direction) { // 'love', 'reject'
@@ -303,10 +308,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Tap handling
     function handleTap(direction) {
+        const lastPage = pages.length - 1;
         if (direction === 'left' && currentCardPage > 0) {
             currentCardPage--;
             renderCardPage();
-        } else if (direction === 'right' && currentCardPage < 2) {
+        } else if (direction === 'right' && currentCardPage < lastPage) {
             currentCardPage++;
             renderCardPage();
         }
@@ -372,9 +378,20 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('btn-quit').addEventListener('click', () => { isAnimating = false; showScreen('intro'); });
     document.getElementById('btn-restart').addEventListener('click', () => showScreen('intro'));
 
-    // Buttons manual trigger
+    // Swipe buttons
     document.getElementById('btn-love').addEventListener('click', () => handleSwipe('love'));
     document.getElementById('btn-reject').addEventListener('click', () => handleSwipe('reject'));
+
+    // Card page navigation
+    btnPrevPage.addEventListener('click', (e) => { e.stopPropagation(); handleTap('left'); });
+    btnNextPage.addEventListener('click', (e) => { e.stopPropagation(); handleTap('right'); });
+
+    document.addEventListener('keydown', (e) => {
+        if (!screens.quote.classList.contains('hidden')) {
+            if (e.key === 'ArrowRight') handleTap('right');
+            if (e.key === 'ArrowLeft') handleTap('left');
+        }
+    });
 
     // Share Image
     document.getElementById('btn-share').addEventListener('click', async () => {
