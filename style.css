@@ -377,18 +377,14 @@ body {
 .tag-prediction { background: #ecfdf5; color: var(--tag-predict); border: 1px solid #a7f3d0; }
 
 .quote-text {
-    /* Mobile-first: scale with viewport width (card is ~full width on mobile) */
     font-size: clamp(1.0rem, 4.2vw, 1.35rem);
     font-weight: 700;
     line-height: 1.45;
     letter-spacing: -0.01em;
     color: var(--ink);
-    flex: 1;
-    min-height: 0;
-    margin: auto 0; /* vertical-centre short quotes; collapses to 0 when overflowing */
+    margin: auto 0; /* center short quotes; collapses to 0 when content overflows */
 }
 
-/* Desktop: card is pinned to 420px wide — use a fixed comfortable size */
 @media (min-width: 450px) {
     .quote-text {
         font-size: 1.05rem;
