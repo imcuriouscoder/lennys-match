@@ -246,13 +246,13 @@ body {
     box-shadow: var(--shadow-soft);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     padding: 30px;
+    padding-top: 36px; /* extra room so indicators don't overlap content */
     transform-origin: 50% 100%;
     transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
     cursor: grab;
     user-select: none;
-    /* Subtle float animation */
+    overflow: hidden; /* clip text to card boundary */
     animation: float 6s ease-in-out infinite;
 }
 .quote-card:active { cursor: grabbing; animation: none; transform: scale(0.98); }
@@ -266,9 +266,9 @@ body {
 .card-inner {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    height: 100%;
-    justify-content: space-between;
+    gap: 16px;
+    flex: 1;
+    min-height: 0; /* critical — lets flex children constrain overflow */
     position: relative;
     z-index: 2;
 }
@@ -334,8 +334,13 @@ body {
 .card-page {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* hide scrollbar visually but keep scroll */
 }
+.card-page::-webkit-scrollbar { display: none; }
 .card-page.hidden {
     display: none;
 }
@@ -372,15 +377,27 @@ body {
 .tag-prediction { background: #ecfdf5; color: var(--tag-predict); border: 1px solid #a7f3d0; }
 
 .quote-text {
-    font-size: clamp(1.1rem, 3.5vh, 1.6rem);
+    /* Mobile-first: scale with viewport width (card is ~full width on mobile) */
+    font-size: clamp(1.0rem, 4.2vw, 1.35rem);
     font-weight: 700;
-    line-height: 1.4;
+    line-height: 1.45;
     letter-spacing: -0.01em;
     color: var(--ink);
-    overflow-y: auto;
-    max-height: 40vh;
-    padding-right: 8px;
-    margin: auto 0;
+    flex: 1;
+    min-height: 0;
+    margin: auto 0; /* vertical-centre short quotes; collapses to 0 when overflowing */
+}
+
+/* Desktop: card is pinned to 420px wide — use a fixed comfortable size */
+@media (min-width: 450px) {
+    .quote-text {
+        font-size: 1.05rem;
+        line-height: 1.5;
+    }
+    .quote-card {
+        padding: 28px 28px;
+        padding-top: 36px;
+    }
 }
 
 .guest-info {
