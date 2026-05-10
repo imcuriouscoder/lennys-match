@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let totalSwipesCount = {
         love: 0, reject: 0
     };
+    let isAnimating = false;
 
     // --- DOM Elements ---
     const screens = {
@@ -33,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
         results: document.getElementById('screen-results')
     };
 
-    const revealSheet = document.getElementById('reveal-sheet');
     const quoteCardElement = document.getElementById('quote-card-element');
     const progressFill = document.getElementById('progress-fill');
     
@@ -53,11 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Init
     function initGame() {
-        // Shuffle or take first 10
-        quotesToPlay = [...window.Config.QUOTES].sort(() => 0.5 - Math.random()).slice(0, 10);
+        quotesToPlay = [...window.Config.QUOTES].sort(() => 0.5 - Math.random()).slice(0, 15);
         currentIndex = 0;
-        
-        // Reset scores
+        isAnimating = false;
         Object.keys(archScores).forEach(k => archScores[k] = 0);
         totalSwipesCount = { love: 0, reject: 0 };
         
@@ -105,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         uiQuoteCounter.textContent = `${currentIndex + 1}/${quotesToPlay.length}`;
-        progressFill.style.width = `${((currentIndex) / quotesToPlay.length) * 100}%`;
+        progressFill.style.width = `${((currentIndex + 1) / quotesToPlay.length) * 100}%`;
 
         // Reset Card animation
         quoteCardElement.className = 'quote-card';
@@ -129,6 +127,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function handleSwipe(direction) { // 'love', 'reject'
+        if (isAnimating) return;
+        isAnimating = true;
         const quote = quotesToPlay[currentIndex];
         
         // Scoring: Love +2, Reject -1
@@ -142,13 +142,14 @@ document.addEventListener("DOMContentLoaded", () => {
             quoteCardElement.classList.add('swipe-left');
         }
 
-        // Proceed to next quote immediately
+        // Wait for the 400ms CSS fly-out transition to complete before loading next
         setTimeout(() => {
             nextQuote();
-        }, 300);
+        }, 420);
     }
 
     function nextQuote() {
+        isAnimating = false;
         currentIndex++;
         loadQuote();
     }
@@ -236,7 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
         Object.keys(m).forEach(k => {
             const el = document.getElementById(`val-${k}`);
-            if (el) el.textContent = m[k];
+            if (el) el.textContent = Math.max(0, m[k]);
         });
 
         // Render Playlist
@@ -253,14 +254,27 @@ document.addEventListener("DOMContentLoaded", () => {
                 a.className = 'playlist-item';
                 a.href = pod.url;
                 a.target = '_blank';
-                
-                a.innerHTML = `
-                    <div class="p-icon">🎧</div>
-                    <div class="p-details">
-                        <span class="p-title">${pod.title}</span>
-                        <span class="p-guest">${pod.guest}</span>
-                    </div>
-                `;
+                a.rel = 'noopener noreferrer';
+
+                const icon = document.createElement('div');
+                icon.className = 'p-icon';
+                icon.textContent = '🎧';
+
+                const details = document.createElement('div');
+                details.className = 'p-details';
+
+                const title = document.createElement('span');
+                title.className = 'p-title';
+                title.textContent = pod.title;
+
+                const guest = document.createElement('span');
+                guest.className = 'p-guest';
+                guest.textContent = pod.guest;
+
+                details.appendChild(title);
+                details.appendChild(guest);
+                a.appendChild(icon);
+                a.appendChild(details);
                 container.appendChild(a);
             });
         } else {
@@ -277,9 +291,15 @@ document.addEventListener("DOMContentLoaded", () => {
     quoteCardElement.addEventListener('touchmove', dragMove, {passive: true});
     quoteCardElement.addEventListener('touchend', dragEnd);
 
-    quoteCardElement.addEventListener('mousedown', dragStart);
-    document.addEventListener('mousemove', dragMove);
-    document.addEventListener('mouseup', dragEnd);
+    quoteCardElement.addEventListener('mousedown', (e) => {
+        dragStart(e);
+        document.addEventListener('mousemove', dragMove);
+        document.addEventListener('mouseup', function onUp(e) {
+            document.removeEventListener('mousemove', dragMove);
+            document.removeEventListener('mouseup', onUp);
+            dragEnd(e);
+        });
+    });
 
     // Tap handling
     function handleTap(direction) {
@@ -349,8 +369,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- Event Listeners ---
     document.getElementById('btn-start').addEventListener('click', initGame);
-    document.getElementById('btn-quit').addEventListener('click', () => showScreen('intro'));
-    // document.getElementById('btn-next-quote').addEventListener('click', nextQuote);
+    document.getElementById('btn-quit').addEventListener('click', () => { isAnimating = false; showScreen('intro'); });
     document.getElementById('btn-restart').addEventListener('click', () => showScreen('intro'));
 
     // Buttons manual trigger
