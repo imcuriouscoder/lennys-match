@@ -1,7 +1,5 @@
 /* style.css - CRED-inspired White Theme */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;700&display=swap');
-
 :root {
     /* Backgrounds */
     --bg-main: #f9fafb;
@@ -248,13 +246,13 @@ body {
     box-shadow: var(--shadow-soft);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     padding: 30px;
+    padding-top: 36px; /* extra room so indicators don't overlap content */
     transform-origin: 50% 100%;
     transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
     cursor: grab;
     user-select: none;
-    /* Subtle float animation */
+    overflow: hidden; /* clip text to card boundary */
     animation: float 6s ease-in-out infinite;
 }
 .quote-card:active { cursor: grabbing; animation: none; transform: scale(0.98); }
@@ -268,9 +266,9 @@ body {
 .card-inner {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    height: 100%;
-    justify-content: space-between;
+    gap: 16px;
+    flex: 1;
+    min-height: 0; /* critical — lets flex children constrain overflow */
     position: relative;
     z-index: 2;
 }
@@ -294,13 +292,55 @@ body {
 .indicator.active {
     background: var(--ink);
 }
-/* Tap Zones removed as JS handles coordinates directly */
+/* Card page navigation chevrons */
+.card-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: var(--ink-soft);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: background 0.15s, color 0.15s, transform 0.15s;
+    line-height: 1;
+    padding: 0;
+}
+.card-nav-btn:hover {
+    background: var(--bg-card);
+    color: var(--ink);
+    transform: translateY(-50%) scale(1.1);
+}
+.card-nav-prev { left: 10px; }
+.card-nav-next { right: 10px; }
+
+/* Speaker role — slightly smaller to fit longer anon strings */
+.speaker-role, .context-episode {
+    font-size: clamp(1.4rem, 4vh, 2rem);
+    line-height: 1.25;
+    color: var(--ink);
+    margin: auto 0;
+    word-break: break-word;
+}
 
 .card-page {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* hide scrollbar visually but keep scroll */
 }
+.card-page::-webkit-scrollbar { display: none; }
 .card-page.hidden {
     display: none;
 }
@@ -309,12 +349,6 @@ body {
     color: var(--ink-faint);
     margin-bottom: 12px;
     font-weight: 700;
-}
-.speaker-role, .context-episode {
-    font-size: 2.2rem;
-    line-height: 1.2;
-    color: var(--ink);
-    margin: auto 0;
 }
 
 /* Tasteful Color Tags */
@@ -340,18 +374,26 @@ body {
 .tag-war { background: #fffbeb; color: var(--tag-war); border: 1px solid #fde68a; }
 .tag-framework { background: #f5f3ff; color: var(--tag-framework); border: 1px solid #ddd6fe; }
 .tag-hot { background: #fff1f2; color: var(--tag-hot); border: 1px solid #fecdd3; }
-.tag-predict { background: #ecfdf5; color: var(--tag-predict); border: 1px solid #a7f3d0; }
+.tag-prediction { background: #ecfdf5; color: var(--tag-predict); border: 1px solid #a7f3d0; }
 
 .quote-text {
-    font-size: clamp(1.1rem, 3.5vh, 1.6rem);
+    font-size: clamp(1.0rem, 4.2vw, 1.35rem);
     font-weight: 700;
-    line-height: 1.4;
+    line-height: 1.45;
     letter-spacing: -0.01em;
     color: var(--ink);
-    overflow-y: auto;
-    max-height: 40vh;
-    padding-right: 8px;
-    margin: auto 0;
+    margin: auto 0; /* center short quotes; collapses to 0 when content overflows */
+}
+
+@media (min-width: 450px) {
+    .quote-text {
+        font-size: 1.05rem;
+        line-height: 1.5;
+    }
+    .quote-card {
+        padding: 28px 28px;
+        padding-top: 36px;
+    }
 }
 
 .guest-info {
@@ -564,6 +606,18 @@ body {
     width: 0%;
     transition: width 1s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
+
+/* Dimension color fills — used on bars, art slot, and orb highlight */
+.bg-doer { background: var(--doer); }
+.bg-thinker { background: var(--thinker); }
+.bg-disruptor { background: var(--disruptor); }
+
+.dim-doer { background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); }
+.dim-thinker { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); }
+.dim-disruptor { background: linear-gradient(135deg, #db2777 0%, #be185d 100%); }
+
+.bg-highlight { background: var(--highlight) !important; }
+.border-highlight { border-color: var(--highlight) !important; }
 
 /* Arch sub scores */
 .arch-scores {

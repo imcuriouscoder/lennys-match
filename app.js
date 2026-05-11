@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let totalSwipesCount = {
         love: 0, reject: 0
     };
+    let isAnimating = false;
 
     // --- DOM Elements ---
     const screens = {
@@ -33,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
         results: document.getElementById('screen-results')
     };
 
-    const revealSheet = document.getElementById('reveal-sheet');
     const quoteCardElement = document.getElementById('quote-card-element');
     const progressFill = document.getElementById('progress-fill');
     
@@ -41,23 +41,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const uiQuoteText = document.getElementById('quote-text');
     const uiQuoteTag = document.getElementById('quote-archetype-label');
     const uiQuoteGuest = document.getElementById('quote-guest');
-    const uiQuoteEpisode = document.getElementById('quote-episode');
     const uiQuoteCounter = document.getElementById('quote-counter');
     
-    // Pages
+    // Pages (2 only: quote + anonymous voice)
     const pages = [
         document.getElementById('page-quote'),
-        document.getElementById('page-speaker'),
-        document.getElementById('page-context')
+        document.getElementById('page-speaker')
     ];
+    const btnPrevPage = document.getElementById('btn-prev-page');
+    const btnNextPage = document.getElementById('btn-next-page');
 
     // Init
     function initGame() {
-        // Shuffle or take first 10
-        quotesToPlay = [...window.Config.QUOTES].sort(() => 0.5 - Math.random()).slice(0, 10);
+        quotesToPlay = [...window.Config.QUOTES].sort(() => 0.5 - Math.random()).slice(0, 15);
         currentIndex = 0;
-        
-        // Reset scores
+        isAnimating = false;
         Object.keys(archScores).forEach(k => archScores[k] = 0);
         totalSwipesCount = { love: 0, reject: 0 };
         
@@ -87,8 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         uiQuoteText.textContent = `"${quote.text}"`;
         uiQuoteTag.textContent = arch ? arch.label : "QUOTE";
-        uiQuoteGuest.textContent = quote.guest;
-        uiQuoteEpisode.textContent = quote.episode || "Unknown Episode";
+        uiQuoteGuest.textContent = quote.anon || quote.guest;
         
         // Remove previous tag classes
         uiQuoteTag.className = 'quote-tag font-mono';
@@ -105,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         uiQuoteCounter.textContent = `${currentIndex + 1}/${quotesToPlay.length}`;
-        progressFill.style.width = `${((currentIndex) / quotesToPlay.length) * 100}%`;
+        progressFill.style.width = `${((currentIndex + 1) / quotesToPlay.length) * 100}%`;
 
         // Reset Card animation
         quoteCardElement.className = 'quote-card';
@@ -116,19 +113,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function renderCardPage() {
-        // Render dots
+        const lastPage = pages.length - 1;
+
+        // Indicators
         const indicators = document.getElementById('card-indicators').children;
         for (let i = 0; i < indicators.length; i++) {
             indicators[i].className = i === currentCardPage ? 'indicator active' : 'indicator';
         }
-        
-        // Render pages
+
+        // Pages
         pages.forEach((p, index) => {
             if (p) p.className = index === currentCardPage ? 'card-page' : 'card-page hidden';
         });
+
+        // Chevrons
+        btnPrevPage.classList.toggle('hidden', currentCardPage === 0);
+        btnNextPage.classList.toggle('hidden', currentCardPage === lastPage);
     }
 
     function handleSwipe(direction) { // 'love', 'reject'
+        if (isAnimating) return;
+        isAnimating = true;
         const quote = quotesToPlay[currentIndex];
         
         // Scoring: Love +2, Reject -1
@@ -142,13 +147,14 @@ document.addEventListener("DOMContentLoaded", () => {
             quoteCardElement.classList.add('swipe-left');
         }
 
-        // Proceed to next quote immediately
+        // Wait for the 400ms CSS fly-out transition to complete before loading next
         setTimeout(() => {
             nextQuote();
-        }, 300);
+        }, 420);
     }
 
     function nextQuote() {
+        isAnimating = false;
         currentIndex++;
         loadQuote();
     }
@@ -236,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
         Object.keys(m).forEach(k => {
             const el = document.getElementById(`val-${k}`);
-            if (el) el.textContent = m[k];
+            if (el) el.textContent = Math.max(0, m[k]);
         });
 
         // Render Playlist
@@ -253,14 +259,27 @@ document.addEventListener("DOMContentLoaded", () => {
                 a.className = 'playlist-item';
                 a.href = pod.url;
                 a.target = '_blank';
-                
-                a.innerHTML = `
-                    <div class="p-icon">🎧</div>
-                    <div class="p-details">
-                        <span class="p-title">${pod.title}</span>
-                        <span class="p-guest">${pod.guest}</span>
-                    </div>
-                `;
+                a.rel = 'noopener noreferrer';
+
+                const icon = document.createElement('div');
+                icon.className = 'p-icon';
+                icon.textContent = '🎧';
+
+                const details = document.createElement('div');
+                details.className = 'p-details';
+
+                const title = document.createElement('span');
+                title.className = 'p-title';
+                title.textContent = pod.title;
+
+                const guest = document.createElement('span');
+                guest.className = 'p-guest';
+                guest.textContent = pod.guest;
+
+                details.appendChild(title);
+                details.appendChild(guest);
+                a.appendChild(icon);
+                a.appendChild(details);
                 container.appendChild(a);
             });
         } else {
@@ -277,16 +296,23 @@ document.addEventListener("DOMContentLoaded", () => {
     quoteCardElement.addEventListener('touchmove', dragMove, {passive: true});
     quoteCardElement.addEventListener('touchend', dragEnd);
 
-    quoteCardElement.addEventListener('mousedown', dragStart);
-    document.addEventListener('mousemove', dragMove);
-    document.addEventListener('mouseup', dragEnd);
+    quoteCardElement.addEventListener('mousedown', (e) => {
+        dragStart(e);
+        document.addEventListener('mousemove', dragMove);
+        document.addEventListener('mouseup', function onUp(e) {
+            document.removeEventListener('mousemove', dragMove);
+            document.removeEventListener('mouseup', onUp);
+            dragEnd(e);
+        });
+    });
 
     // Tap handling
     function handleTap(direction) {
+        const lastPage = pages.length - 1;
         if (direction === 'left' && currentCardPage > 0) {
             currentCardPage--;
             renderCardPage();
-        } else if (direction === 'right' && currentCardPage < 2) {
+        } else if (direction === 'right' && currentCardPage < lastPage) {
             currentCardPage++;
             renderCardPage();
         }
@@ -349,13 +375,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- Event Listeners ---
     document.getElementById('btn-start').addEventListener('click', initGame);
-    document.getElementById('btn-quit').addEventListener('click', () => showScreen('intro'));
-    // document.getElementById('btn-next-quote').addEventListener('click', nextQuote);
+    document.getElementById('btn-quit').addEventListener('click', () => { isAnimating = false; showScreen('intro'); });
     document.getElementById('btn-restart').addEventListener('click', () => showScreen('intro'));
 
-    // Buttons manual trigger
+    // Swipe buttons
     document.getElementById('btn-love').addEventListener('click', () => handleSwipe('love'));
     document.getElementById('btn-reject').addEventListener('click', () => handleSwipe('reject'));
+
+    // Card page navigation
+    btnPrevPage.addEventListener('click', (e) => { e.stopPropagation(); handleTap('left'); });
+    btnNextPage.addEventListener('click', (e) => { e.stopPropagation(); handleTap('right'); });
+
+    document.addEventListener('keydown', (e) => {
+        if (!screens.quote.classList.contains('hidden')) {
+            if (e.key === 'ArrowRight') handleTap('right');
+            if (e.key === 'ArrowLeft') handleTap('left');
+        }
+    });
 
     // Share Image
     document.getElementById('btn-share').addEventListener('click', async () => {
